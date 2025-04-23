@@ -133,12 +133,14 @@ export default function MovieDetail() {
         </View>
 
         {/* Play Trailer Button */}
-        <View style={styles.playView}>
-          <TouchableOpacity onPress={() => onPlayView()}>
-            <Image source={Images.playButton} style={styles.imageStyle} />
-          </TouchableOpacity>
-          <Text style={styles.playText}>{"Play Trailer"}</Text>
-        </View>
+        {movie?.id && (
+          <View style={styles.playView}>
+            <TouchableOpacity onPress={() => onPlayView()}>
+              <Image source={Images.playButton} style={styles.imageStyle} />
+            </TouchableOpacity>
+            <Text style={styles.playText}>{"Play Trailer"}</Text>
+          </View>
+        )}
 
         {/* Movie Overview */}
         <Text style={styles.overviewText}>{movie?.overview}</Text>
